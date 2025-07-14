@@ -1,0 +1,157 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Entire background set to black */
+}
+
+header {
+    background-color: #aaff55; /* Header background */
+    padding: 20px;
+    text-align: center;
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+h1 {
+    color: #333;
+    margin: 0;
+}
+
+h2 {
+    color: #fff; /* White text for contrast on black background */
+    border-bottom: 2px solid #88cc33;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #fff; /* White text for section titles */
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #333;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #88cc33;
+}
+
+section {
+    padding: 20px;
+    margin-top: 100px; /* Prevent content from being hidden under fixed header */
+}
+
+.work-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.work-section {
+    flex: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three-column grid */
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: #d9ff99;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.grid-item img {
+    cursor: pointer; /* Indicate clickable images */
+}
+
+video, img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-info {
+    color: #fff; /* White text for contact info */
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+.contact-info a {
+    color: #88cc33;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info hr {
+    border: 2px solid #88cc33; /* Thick line break */
+    margin: 15px 0;
+}
+
+.profile-picture {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1001; /* Above header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Dark overlay */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 20px;
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #88cc33;
+    text-decoration: none;
+    cursor: pointer;
+}
