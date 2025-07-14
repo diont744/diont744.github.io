@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Enterprise Roofing</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Enterprise Roofing</h1>
+        <nav>
+            <a href="index.html">Our Work</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <section id="work">
+        <h2>Our Work</h2>
+        <div class="work-container">
+            <div class="work-section pictures">
+                <h3>Pictures (7)</h3>
+                <div class="grid">
+                    <div class="grid-item"><img src="../media/picture_1.JPG" alt="Picture 1" onclick="enlargeImage('../media/picture_1.JPG')"></div><div class="grid-item"><img src="../media/picture_2.JPG" alt="Picture 2" onclick="enlargeImage('../media/picture_2.JPG')"></div><div class="grid-item"><img src="../media/picture_3.JPG" alt="Picture 3" onclick="enlargeImage('../media/picture_3.JPG')"></div><div class="grid-item"><img src="../media/picture_4.JPG" alt="Picture 4" onclick="enlargeImage('../media/picture_4.JPG')"></div><div class="grid-item"><img src="../media/picture_5.JPEG" alt="Picture 5" onclick="enlargeImage('../media/picture_5.JPEG')"></div><div class="grid-item"><img src="../media/picture_6.JPEG" alt="Picture 6" onclick="enlargeImage('../media/picture_6.JPEG')"></div><div class="grid-item"><img src="../media/picture_7.JPEG" alt="Picture 7" onclick="enlargeImage('../media/picture_7.JPEG')"></div>
+                </div>
+            </div>
+            <div class="work-section videos">
+                <h3>Videos (1)</h3>
+                <div class="grid">
+                    <div class="grid-item"><video controls src="../media/video_1.mp4"></video></div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for enlarged image -->
+        <div id="modal" class="modal" onclick="closeModal(event)">
+            <span class="close">×</span>
+            <img class="modal-content" id="enlarged-image">
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded and parsed');
+            window.enlargeImage = function(src) {
+                console.log('Click detected, enlarging image: ' + src);
+                const modal = document.getElementById('modal');
+                const enlargedImage = document.getElementById('enlarged-image');
+                if (modal && enlargedImage) {
+                    enlargedImage.src = src;
+                    modal.style.display = 'block';
+                    console.log('Modal displayed with src: ' + enlargedImage.src);
+                } else {
+                    console.error('Modal or image element not found:', { modal, enlargedImage });
+                }
+            };
+
+            window.closeModal = function(event) {
+                console.log('Close event triggered');
+                if (event.target === document.getElementById('modal') || event.target.className === 'close') {
+                    document.getElementById('modal').style.display = 'none';
+                    console.log('Modal closed');
+                }
+            };
+        });
+    </script>
+</body>
+</html>
